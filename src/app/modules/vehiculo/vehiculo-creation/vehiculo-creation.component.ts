@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class VehiculoCreationComponent implements OnInit {
 
-  fgValidator: FormGroup | undefined;
+  fgValidator!: FormGroup;
 
   constructor(private fb:FormBuilder) { }
 
@@ -32,6 +32,19 @@ export class VehiculoCreationComponent implements OnInit {
       kilometraje:['',[Validators.required]],
       servicio:['',[Validators.required]]
   });
+  }
+
+  RegistrarV(){
+    if(this.fgValidator.invalid){
+      alert("Faltan campos por llenar");
+      return false;
+    }
+    alert("registrando");
+    return false;
+  }
+
+  get fgv(){
+    return this.fgValidator.controls;
   }
 
 }
