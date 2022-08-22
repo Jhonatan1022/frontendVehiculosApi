@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class VehiculoCreationComponent implements OnInit {
 
-  fgValidator!: FormGroup;
+  fgValidator: FormGroup | undefined;
 
   constructor(private fb:FormBuilder) { }
 
